@@ -13,7 +13,7 @@ let package = Package(
             targets: ["Tabman"])
     ],
     dependencies: [
-        .package(url: "https://github.com/uias/Pageboy", from: "3.5.0")
+        .package(url: "https://github.com/kfinteractive/Pageboy", .branch("master"))
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -21,8 +21,8 @@ let package = Package(
         .target(
             name: "Tabman",
             dependencies: ["Pageboy"],
-            path: ".",
-            sources: ["Sources/Tabman"]),
+            path: "Sources/Tabman",
+            exclude: ["Tabman.h"]),
         .testTarget(
             name: "TabmanTests",
             dependencies: ["Tabman"]
